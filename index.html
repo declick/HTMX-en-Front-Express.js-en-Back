@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <title>hello HTMX</title>
+</head>
+<body>
+    <div 
+        hx-get="http://localhost:9300/messages" 
+        hx-trigger="click" 
+        class="pointer"
+        >
+        [click here !]
+    </div>
+    <div>
+        <h2>Add a Product</h2>
+        <form hx-post="http://localhost:9300/products" hx-swap="beforeend">
+            <input type="text" name="productname" placeholder="type a product name" /><br>
+            <input type="submit" value="Add product">
+        </form>
+    </div>
+    <div>
+        <h2>Search with debounce</h2>
+        <input  
+            type="search" 
+            name="productname"
+            placeholder="type a product name" 
+            hx-get="http://localhost:9300/products" 
+            hx-trigger="keyup changed delay:700ms, search"
+            hx-target="#search_results"
+        />
+        <div id="search_results"></div> 
+
+</body>
+</html>

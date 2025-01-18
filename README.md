@@ -33,3 +33,5 @@ Ce projet est une démo simple illustrant l'utilisation de la bibliothèque HTMX
 - `server.js`: Fichier du serveur Express avec des exemples d'API pour les messages et les produits.
 
 ---
+
+![image](https://github.com/user-attachments/assets/45c65eb6-6447-4ae6-b36f-11069bed83ef)
